@@ -29,7 +29,7 @@ include 'koneksi.php';
 
 	<h3 class="judul">Data PC Staff Kahaptex</h3>
 	<hr />
-
+<!-- teset -->
 <?php
 		if(isset($_GET['pesan'])){
 			$pesan = $_GET['pesan'];
