@@ -47,8 +47,9 @@ include 'koneksi.php';
 				echo '<meta http-equiv="refresh" content="3;url=index.php">';
 			}else if($pesan == "update"){
 				echo '<div class="alert alert-primary" role="alert">
-			            <strong> Sukses..!</strong> Data Berhasil Diubah.
-			            </div>';
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+						<strong> Sukses..!</strong> Data Berhasil Diubah.
+						</div>';
 				echo '<meta http-equiv="refresh" content="3;url=index.php">';
 			}else if($pesan == "gagal update"){
 				echo '<div class="alert alert-primary" role="alert">
@@ -113,15 +114,31 @@ include 'koneksi.php';
 	    <div class="col-sm-1" >
 	        <button id="search" name="search" class="btn btn-warning"><i class="fa fa-search"></i></button>
 	    </div>
-	    <div class="col-sm-2">
+	</div>
+
+	<div class="col-md">
 <?php
 		$sql_jml = mysqli_query($konek, "SELECT no_pc FROM pcid");
 		$jml_pc = mysqli_num_rows($sql_jml);
 ?>
-
 	    	Total PC :&nbsp; <?php echo $jml_pc ?>
-	    </div>
-	</div>
+  	</div>
+
+  	<div class="col-md">
+<?php
+		$sql_jml = mysqli_query($konek, "SELECT no_pc FROM pcid");
+		$jml_pc = mysqli_num_rows($sql_jml);
+?>
+	    	Total PC :&nbsp; <?php echo $jml_pc ?>
+  	</div>
+
+  	<div class="col-md">
+<?php
+		$sql_jml = mysqli_query($konek, "SELECT no_pc FROM pcid");
+		$jml_pc = mysqli_num_rows($sql_jml);
+?>
+	    	Total PC :&nbsp; <?php echo $jml_pc ?>
+  	</div>
 </form>
 <!-- ============================Modal Input================================-->
 <div class="modal fade" id="ModalInput" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
