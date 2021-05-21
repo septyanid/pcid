@@ -118,27 +118,31 @@ include 'koneksi.php';
 
 	<div class="col-md">
 <?php
-		$sql_jml = mysqli_query($konek, "SELECT no_pc FROM pcid");
+		$sql_jml = mysqli_query($konek, "SELECT printer1 FROM pcid");
 		$jml_pc = mysqli_num_rows($sql_jml);
 ?>
 	    	Total PC :&nbsp; <?php echo $jml_pc ?>
+  	</div> 
+
+  	<div class="col-md">
+<?php
+		$result=mysqli_query($konek, "SELECT count(printer1) as total from pcid");
+		$data=mysqli_fetch_assoc($result);
+
+		$result2=mysqli_query($konek, "SELECT count(printer2) as total2 from pcid");
+		$data2=mysqli_fetch_assoc($result2);
+?>
+		Total Printer = <?php echo $data['total']+$data2['total2']; ?>
   	</div>
 
   	<div class="col-md">
 <?php
-		$sql_jml = mysqli_query($konek, "SELECT no_pc FROM pcid");
-		$jml_pc = mysqli_num_rows($sql_jml);
+		$jml_sc=mysqli_query($konek, "SELECT count(scanner) as sc from pcid");
+		$data_sc=mysqli_fetch_assoc($jml_sc);
 ?>
-	    	Total PC :&nbsp; <?php echo $jml_pc ?>
+	    Total Scanner = <?php echo $data_sc['sc']; ?>
   	</div>
-
-  	<div class="col-md">
-<?php
-		$sql_jml = mysqli_query($konek, "SELECT no_pc FROM pcid");
-		$jml_pc = mysqli_num_rows($sql_jml);
-?>
-	    	Total PC :&nbsp; <?php echo $jml_pc ?>
-  	</div>
+  	
 </form>
 <!-- ============================Modal Input================================-->
 <div class="modal fade" id="ModalInput" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
