@@ -93,7 +93,7 @@ include 'koneksi.php';
                 <option value="manager" <?php if ($s_jurusan=="manager"){ echo "selected"; } ?>>MANAGER</option>
                 <option value="hrd" <?php if ($s_jurusan=="hrd"){ echo "selected"; } ?>>HRD</option>
                 <option value="design" <?php if ($s_jurusan=="design"){ echo "selected"; } ?>>DESIGN</option>
-                <option value="it" <?php if ($s_jurusan=="it"){ echo "selected"; } ?>>IT</option>
+                <option value="teknik" <?php if ($s_jurusan=="teknik"){ echo "selected"; } ?>>TEKNIK</option>
                 <option value="exim" <?php if ($s_jurusan=="exim"){ echo "selected"; } ?>>EXIM</option>
                 <option value="stok" <?php if ($s_jurusan=="stok"){ echo "selected"; } ?>>STOK LT.4</option>
                 <option value="law" <?php if ($s_jurusan=="law"){ echo "selected"; } ?>>LAW</option>
@@ -177,7 +177,7 @@ include 'koneksi.php';
 	    		<option value="MANAGER">MANAGER</option>
 	    		<option value="HRD">HRD</option>
 	    		<option value="DESIGN">DESIGN</option>
-	    		<option value="IT">IT</option>
+	    		<option value="TEKNIK">TEKNIK</option>
 	    		<option value="EXIM">EXIM</option>
 	    		<option value="STOK LT.4">STOK LT.4</option>
 	    		<option value="LAW">LAW</option>
