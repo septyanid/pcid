@@ -284,9 +284,9 @@ include 'koneksi.php';
     $search_jurusan = '%'. $s_jurusan .'%';
     $search_keyword = '%'. $s_keyword .'%';
     $no = 1;
-    $query = "SELECT * FROM pcid WHERE divisi LIKE ? AND (no_pc LIKE ? OR divisi LIKE ? OR nama_user LIKE ? OR ip0 LIKE ? OR ip1 LIKE ?) ORDER BY id ASC";
+    $query = "SELECT * FROM pcid WHERE divisi LIKE ? AND (no_pc LIKE ? OR divisi LIKE ? OR printer1 LIKE ? OR printer2 LIKE ? OR scanner LIKE ? OR nama_user LIKE ? OR ip0 LIKE ? OR ip1 LIKE ?) ORDER BY id ASC";
     $dewan1 = $konek->prepare($query);
-    $dewan1->bind_param('ssssss', $search_jurusan, $search_keyword, $search_keyword, $search_keyword, $search_keyword, $search_keyword);
+    $dewan1->bind_param('sssssssss', $search_jurusan, $search_keyword, $search_keyword, $search_keyword, $search_keyword, $search_keyword, $search_keyword, $search_keyword, $search_keyword);
     $dewan1->execute();
     $res1 = $dewan1->get_result();
 

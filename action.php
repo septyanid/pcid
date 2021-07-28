@@ -15,8 +15,12 @@ if($_GET['act']=="input"){
 		$ip2 = $_POST['ip2'];
 		$lain_lain = $_POST['lain_lain'];
 
+		$printer1 = !empty($printer1) ? "'$printer1'" : "NULL";
+		$printer2 = !empty($printer2) ? "'$printer2'" : "NULL";
+		$scanner = !empty($scanner) ? "'$scanner'" : "NULL";
+
 		$sql_input = "INSERT INTO pcid (no_pc, divisi, nama_user, set_pc, printer1, printer2, scanner, ip0, ip1, ip2, lain_lain)
-			VALUES ('$no_pc', '$divisi', '$nama_user', '$set_pc', '$printer1', '$printer2', '$scanner', '$ip0', '$ip1', '$ip2', '$lain_lain')";
+			VALUES ('$no_pc', '$divisi', '$nama_user', '$set_pc', $printer1, $printer2, $scanner, '$ip0', '$ip1', '$ip2', '$lain_lain')";
 
 		$result_input = mysqli_query($konek, $sql_input);
 
@@ -40,15 +44,19 @@ if($_GET['act']=="input"){
 		$ip2 = $_POST['ip2'];
 		$lain_lain = $_POST['lain_lain'];
 
+		$printer1 = !empty($printer1) ? "'$printer1'" : "NULL";
+		$printer2 = !empty($printer2) ? "'$printer2'" : "NULL";
+		$scanner = !empty($scanner) ? "'$scanner'" : "NULL";
+
 		$sql_update = "UPDATE `pcid` SET
 				id = '$id',
 				no_pc = '$no_pc',
 				divisi = '$divisi',
 				nama_user = '$nama_user',
 				set_pc = '$set_pc',
-				printer1 = '$printer1',
-				printer2 = '$printer2',
-				scanner = '$scanner',
+				printer1 = $printer1,
+				printer2 = $printer2,
+				scanner = $scanner,
 				ip0 = '$ip0',
 				ip1 = '$ip1',
 				ip2 = '$ip2',
