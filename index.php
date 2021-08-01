@@ -158,21 +158,21 @@ include 'koneksi.php';
       	<form role="form" action="action.php?act=input" method="post">
 <?php
 
-	$query = mysqli_query($konek, "SELECT max(no_pc) as kodeTerbesar FROM pcid");
+	$query = mysqli_query($konek, "SELECT max(no_pc) as pcTerbesar FROM pcid");
 	$data = mysqli_fetch_array($query);
-	$kodeBarang = $data['kodeTerbesar'];
+	$no_pc = $data['pcTerbesar'];
 
-	$urutan = (int) substr($kodeBarang, 3);
+	$urutan = (int) substr($no_pc, 3);
 
 	$urutan++;
 
 	$huruf = "PC-";
-	$kodeBarang = $huruf . sprintf("%04s", $urutan);
+	$no_pc = $huruf . sprintf("%04s", $urutan);
 			
 ?>
 	<div class="form-group">
 	    <label>ID</label>
-	    <input type="text" class="form-control" name="no_pc" value="<?php echo $kodeBarang ?>" readonly>
+	    <input type="text" class="form-control" name="no_pc" value="<?php echo $no_pc ?>" readonly>
   	</div>
 
   	<div class="form-group">
