@@ -157,17 +157,22 @@ include 'koneksi.php';
       <div class="modal-body">
       	<form role="form" action="action.php?act=input" method="post">
 <?php
-	//$proses = $_GET['proses'];
 
-				$sql = "SELECT no_pc FROM `pcid` order by no_pc DESC";
-				$hasil = mysqli_query($konek, $sql);
-				$data = mysqli_fetch_array($hasil);
-				$no_pc = $data['no_pc'];
+	$query = mysqli_query($konek, "SELECT max(no_pc) as kodeTerbesar FROM pcid");
+	$data = mysqli_fetch_array($query);
+	$kodeBarang = $data['kodeTerbesar'];
+
+	$urutan = (int) substr($kodeBarang, 3);
+
+	$urutan++;
+
+	$huruf = "PC-";
+	$kodeBarang = $huruf . sprintf("%04s", $urutan);
 			
 ?>
 	<div class="form-group">
 	    <label>ID</label>
-	    <input type="text" class="form-control" name="no_pc" value="<?php echo $no_pc ?>">
+	    <input type="text" class="form-control" name="no_pc" value="<?php echo $kodeBarang ?>" readonly>
   	</div>
 
   	<div class="form-group">
