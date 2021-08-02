@@ -116,15 +116,17 @@ include 'koneksi.php';
 	    </div>
 	</div>
 
-	<div class="col-md">
+<div class="container">
+	<div class="row">
+		<div class="col-sm">
 <?php
 		$sql_jml = mysqli_query($konek, "SELECT printer1 FROM pcid");
 		$jml_pc = mysqli_num_rows($sql_jml);
 ?>
 	    	Total PC :&nbsp; <?php echo $jml_pc ?>
-  	</div> 
+  	 	</div>
 
-  	<div class="col-md">
+  		<div class="col-sm">
 <?php
 		$result=mysqli_query($konek, "SELECT count(printer1) as total from pcid");
 		$data=mysqli_fetch_assoc($result);
@@ -133,16 +135,18 @@ include 'koneksi.php';
 		$data2=mysqli_fetch_assoc($result2);
 ?>
 		Total Printer = <?php echo $data['total']+$data2['total2']; ?>
-  	</div>
+  		</div>
 
-  	<div class="col-md">
+  		<div class="col-sm">
 <?php
 		$jml_sc=mysqli_query($konek, "SELECT count(scanner) as sc from pcid");
 		$data_sc=mysqli_fetch_assoc($jml_sc);
 ?>
 	    Total Scanner = <?php echo $data_sc['sc']; ?>
+  		</div>
   	</div>
-  	
+ </div>
+
 </form>
 <!-- ============================Modal Input================================-->
 <div class="modal fade" id="ModalInput" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -360,13 +364,11 @@ include 'koneksi.php';
 				$lain_lain = $data2['lain_lain'];
 			
 ?>
-	<div class="form-group">
-	    <label>#</label>
-	    <input type="text" class="form-control" name="id" value="<?php echo $id ?>" readonly>
+	    <input type="hidden" class="form-control" name="id" value="<?php echo $id ?>" readonly>
 
-  	</div><div class="form-group">
+  	<div class="form-group">
 	    <label>ID</label>
-	    <input type="text" class="form-control" name="no_pc" value="<?php echo $no_pc ?>">
+	    <input type="text" class="form-control" name="no_pc" value="<?php echo $no_pc ?>" readonly>
   	</div>
 
   	<div class="form-group">
@@ -502,5 +504,8 @@ include 'koneksi.php';
 			$.bootstrapGrowl("this is message is success");
 		}
 	</script> -->
+	<?
+	include 'footer.php';
+	?>
 </body>
 </html>
