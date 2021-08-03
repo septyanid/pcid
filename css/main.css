@@ -581,7 +581,8 @@ th, td {
   background-color: #cccccc;
 }
 
-.bg-dark{
-  position: relative;
-  bottom: 80px;
+.bg-dark.text-center.text-white {
+  position: absolute;
+  width: 100%;
+  bottom: -150px;
 }

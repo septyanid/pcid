@@ -1,6 +1,6 @@
 <footer class="bg-dark text-center text-white">
   <!-- Grid container -->
-  <div class="container p-3 pb-1">
+  <div class="container p-2 pb-1">
     <!-- Section: Social media -->
     <section class="mb-1">
       <!-- Facebook -->

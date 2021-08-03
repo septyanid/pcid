@@ -123,7 +123,7 @@ include 'koneksi.php';
 		$sql_jml = mysqli_query($konek, "SELECT printer1 FROM pcid");
 		$jml_pc = mysqli_num_rows($sql_jml);
 ?>
-	    	Total PC :&nbsp; <?php echo $jml_pc ?>
+	    	Total PC = <?php echo $jml_pc ?>
   	 	</div>
 
   		<div class="col-sm">
@@ -504,7 +504,7 @@ include 'koneksi.php';
 			$.bootstrapGrowl("this is message is success");
 		}
 	</script> -->
-	<?
+	<?php
 	include 'footer.php';
 	?>
 </body>
