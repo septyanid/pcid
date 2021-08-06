@@ -1,2 +1,2 @@
 # pcid
-Aplikasi sederhana diperuntukan mendata PC
+Aplikasi CRUD sederhana diperuntukan mendata PC
