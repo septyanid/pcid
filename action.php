@@ -1,5 +1,6 @@
 <?php
 	include "koneksi.php";
+	session_start();
 $proses = $_GET['act'];
 
 if($_GET['act']=="input"){
@@ -30,7 +31,7 @@ if($_GET['act']=="input"){
 	    	header("location:index.php?pesan=gagal input");
 	  }
 
-	}else if($_GET['act']=="edit"){
+}else if($_GET['act']=="edit"){
 		$id = $_POST['id'];
 		$no_pc = $_POST['no_pc'];
 		$divisi = $_POST['divisi'];
@@ -70,7 +71,7 @@ if($_GET['act']=="input"){
 			header("location:index.php?pesan=gagal update");
 		}
 
-	}else if($_GET['act']=="delete"){
+}else if($_GET['act']=="delete"){
 		$id = $_GET['id'];
 		$sql = "DELETE FROM pcid WHERE id = '$id'";
 		$result = mysqli_query($konek, $sql);
@@ -80,6 +81,22 @@ if($_GET['act']=="input"){
 				}else{
 					header("location:index.php?pesan=gagal delete");
 				}
-	}	
+
+}else if($_GET['act']=="login") {
+		$username = $_POST['username'];
+		$password = $_POST['password'];
+		 
+		$login = mysqli_query("SELECT * FROM user WHERE username='$username' AND password='$password'");
+		$cek = mysqli_num_rows($login);
+		 
+		if($cek > 0){
+			session_start();
+			$_SESSION['username'] = $username;
+			$_SESSION['status'] = "login";
+			header("location:index");
+		}else{
+			header("location:login");	
+		}
+			}	
 		
 ?>

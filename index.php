@@ -108,11 +108,14 @@ include 'koneksi.php';
                 <option value="marketing" <?php if ($s_jurusan=="marketing"){ echo "selected"; } ?>>MARKETING</option>
             </select>	        
     	</div> 
-	    <div class="col-sm-3" >
+	    <div class="col-sm-3">
 	        <input type="text" placeholder="Keyword" name="s_keyword" id="s_keyword" class="form-control" value="<?php echo $s_keyword; ?>">
 	    </div>
-	    <div class="col-sm-1" >
+	    <div class="col-sm-1">
 	        <button id="search" name="search" class="btn btn-warning"><i class="fa fa-search"></i></button>
+	    </div>
+	    <div class="col-sm-4">
+	        <a href="logout.php" type="button" class="btn btn-logout">LOGOUT</a>
 	    </div>
 	</div>
 

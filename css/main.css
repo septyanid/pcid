@@ -108,6 +108,14 @@ iframe {
   border-color: #007bff;
 }
 
+.btn-logout{
+  margin-right: 10px;
+  float: right;
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
 .table100 .ps__rail-y::before {
   content: "";
   display: block;
