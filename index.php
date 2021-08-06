@@ -117,8 +117,8 @@ include 'koneksi.php';
 	</div>
 
 <div class="container">
-	<div class="row">
-		<div class="col-sm">
+	<div class="row-total">
+		<div class="col-md">
 <?php
 		$sql_jml = mysqli_query($konek, "SELECT printer1 FROM pcid");
 		$jml_pc = mysqli_num_rows($sql_jml);
@@ -126,7 +126,7 @@ include 'koneksi.php';
 	    	Total PC :&nbsp; <?php echo $jml_pc ?>
   	 	</div>
 
-  		<div class="col-sm">
+  		<div class="col-md">
 <?php
 		$result=mysqli_query($konek, "SELECT count(printer1) as total from pcid");
 		$data=mysqli_fetch_assoc($result);
@@ -137,7 +137,7 @@ include 'koneksi.php';
 		Total Printer = <?php echo $data['total']+$data2['total2']; ?>
   		</div>
 
-  		<div class="col-sm">
+  		<div class="col-md">
 <?php
 		$jml_sc=mysqli_query($konek, "SELECT count(scanner) as sc from pcid");
 		$data_sc=mysqli_fetch_assoc($jml_sc);

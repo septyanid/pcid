@@ -585,3 +585,14 @@ th, td {
   position: relative;
   bottom: 80px;
 }
+
+.row-total{
+  display: flex;
+  padding-left: 125px;
+  background-color: #393939;
+  border-radius: 1rem;
+  color: white;
+  font-family: 'Lato-Bold';
+  line-height: 1.5;
+  font-size: 15px;
+}
