@@ -1,6 +1,6 @@
 <?php
 	include "koneksi.php";
-	session_start();
+
 $proses = $_GET['act'];
 
 if($_GET['act']=="input"){
@@ -86,11 +86,13 @@ if($_GET['act']=="input"){
 		$username = $_POST['username'];
 		$password = $_POST['password'];
 		 
-		$login = mysqli_query("SELECT * FROM user WHERE username='$username' AND password='$password'");
-		$cek = mysqli_num_rows($konek, $login);
-		 
+		$login = mysqli_query($konek, "SELECT * FROM user WHERE username='$username' AND password='$password'");
+		$cek = mysqli_num_rows($login);
+		//echo $cek; 
 		if($cek > 0){
 			session_start();
+			$data = mysqli_fetch_array($login);
+			$_SESSION['nama_user'] = $data['nama_user'];
 			$_SESSION['username'] = $username;
 			$_SESSION['status'] = "login";
 			header("location:index");

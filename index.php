@@ -3,7 +3,7 @@ include 'koneksi.php';
 session_start();
 
 if($_SESSION['status'] !="login"){
-	header("location:index");
+	header("location:login");
 }
 ?>
 
@@ -33,7 +33,7 @@ if($_SESSION['status'] !="login"){
 <body>
 
 	<h3 class="judul">Data PC Staff Kahaptex</h3>
-	<?php echo "Hai, Selamat Datang ".$_SESSION['username']; ?>
+	<?php echo "Hai, Selamat Datang ".$_SESSION['nama_user']; ?>
 	<hr />
 	
 <?php
