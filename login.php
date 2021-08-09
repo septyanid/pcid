@@ -26,6 +26,16 @@ include 'koneksi.php';
 			</div>
 		</form>
 	</div>
+
+<?php 
+	if(isset($_GET['pesan'])) { 
+?>
+			<div class="error">
+				<label>Oopps... <?php echo $_GET['pesan']; ?></label>
+			</div>
+<?php } 
+?>
+
 <script type="text/javascript">
 	function validasi() {
 		var username = document.getElementById("username").value;

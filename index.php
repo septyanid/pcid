@@ -1,5 +1,10 @@
 <?php
 include 'koneksi.php';
+session_start();
+
+if($_SESSION['status'] !="login"){
+	header("location:index");
+}
 ?>
 
 <!DOCTYPE html>
@@ -28,6 +33,7 @@ include 'koneksi.php';
 <body>
 
 	<h3 class="judul">Data PC Staff Kahaptex</h3>
+	<?php echo "Hai, Selamat Datang ".$_SESSION['username']; ?>
 	<hr />
 	
 <?php

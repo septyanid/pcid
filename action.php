@@ -87,7 +87,7 @@ if($_GET['act']=="input"){
 		$password = $_POST['password'];
 		 
 		$login = mysqli_query("SELECT * FROM user WHERE username='$username' AND password='$password'");
-		$cek = mysqli_num_rows($login);
+		$cek = mysqli_num_rows($konek, $login);
 		 
 		if($cek > 0){
 			session_start();
@@ -95,7 +95,7 @@ if($_GET['act']=="input"){
 			$_SESSION['status'] = "login";
 			header("location:index");
 		}else{
-			header("location:login");	
+			header("location:login?pesan=gagal login data tidak ditemukan");
 		}
 			}	
 		
