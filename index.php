@@ -16,7 +16,8 @@ if($_SESSION['status'] !="login"){
 <!--===============================================================================================-->	
 	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+	<!-- <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css"> -->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.css">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="fonts/font-awesome/css/font-awesome.min.css">
 <!--===============================================================================================-->
@@ -90,8 +91,8 @@ if($_SESSION['status'] !="login"){
 
 <form method="POST" action="">
     <div class="row mb-3">
-    	<div class="col-sm-2" >
-	        <a href="#" type="button" class="btn btn-primary2" data-toggle="modal" data-target="#ModalInput">Tambah Data</a>
+    	<div class="col-sm-1" >
+	        <a href="#" type="button" class="btn btn-primary2" data-toggle="modal" data-target="#ModalInput"><i class="fa fa-plus"></i></a>
 	    </div>
     	<div class="col-sm-2">
             <select name="s_jurusan" id="s_jurusan" class="form-control">
@@ -117,10 +118,10 @@ if($_SESSION['status'] !="login"){
 	    <div class="col-sm-3">
 	        <input type="text" placeholder="Keyword" name="s_keyword" id="s_keyword" class="form-control" value="<?php echo $s_keyword; ?>">
 	    </div>
-	    <div class="col-sm-1">
+	    <div class="col-sm-2">
 	        <button id="search" name="search" class="btn btn-warning"><i class="fa fa-search"></i></button>
 	    </div>
-	    <div class="col-sm-4">
+	    <div class="col">
 	        <a href="logout.php" type="button" class="btn btn-logout">LOGOUT</a>
 	    </div>
 	</div>

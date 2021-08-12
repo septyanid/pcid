@@ -12,6 +12,9 @@ include 'koneksi.php';
 <body>
 	<br/>
 	<div id="wrapper">
+<center>
+	<img src="images/kahaptex.jpg">
+</center>
 		<form action="action.php?act=login" method="post" onSubmit="return validasi()">
 			<div>
 				<label>Username:</label>
@@ -20,10 +23,15 @@ include 'koneksi.php';
 			<div>
 				<label>Password:</label>
 				<input type="password" name="password" id="password" />
-			</div>			
+			</div>
+		<div class="row">
 			<div>
 				<input type="submit" value="Login" class="tombol">
+			</div>			
+			<div>
+				<input type="button" value="Login" class="tombol">
 			</div>
+		</div>
 		</form>
 	</div>
 

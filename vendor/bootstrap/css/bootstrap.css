@@ -590,8 +590,6 @@ pre code {
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px;
 }
 
 .no-gutters {
@@ -841,6 +839,7 @@ pre code {
     -ms-flex: 0 0 8.333333%;
     flex: 0 0 8.333333%;
     max-width: 8.333333%;
+    margin-right: -55px;
   }
   .col-sm-2 {
     -ms-flex: 0 0 16.666667%;
