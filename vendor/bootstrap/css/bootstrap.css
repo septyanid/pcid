@@ -839,7 +839,6 @@ pre code {
     -ms-flex: 0 0 8.333333%;
     flex: 0 0 8.333333%;
     max-width: 8.333333%;
-    margin-right: -55px;
   }
   .col-sm-2 {
     -ms-flex: 0 0 16.666667%;
@@ -6579,6 +6578,9 @@ button.bg-light:focus {
 
 .bg-dark {
   background-color: #343a40 !important;
+  position: fixed;
+  width: 100%;
+  bottom: 0px;
 }
 
 a.bg-dark:hover, a.bg-dark:focus,
@@ -8131,7 +8133,7 @@ button.bg-dark:focus {
 }
 
 .p-3 {
-  padding: 1rem !important;
+  padding: 7px;
 }
 
 .pt-3,

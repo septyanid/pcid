@@ -12,9 +12,9 @@ include 'koneksi.php';
 <body>
 	<br/>
 	<div id="wrapper">
-<center>
+
 	<img src="images/kahaptex.jpg">
-</center>
+
 		<form action="action.php?act=login" method="post" onSubmit="return validasi()">
 			<div>
 				<label>Username:</label>
@@ -25,11 +25,11 @@ include 'koneksi.php';
 				<input type="password" name="password" id="password" />
 			</div>
 		<div class="row">
-			<div>
+			<div class="col-sm">
 				<input type="submit" value="Login" class="tombol">
 			</div>			
-			<div>
-				<input type="button" value="Login" class="tombol">
+			<div class="col-sm">
+				<a href="index2">Guess Login</a>
 			</div>
 		</div>
 		</form>
@@ -41,9 +41,9 @@ include 'koneksi.php';
 			<div class="error">
 				<label>Oopps... <?php echo $_GET['pesan']; ?></label>
 			</div>
-<?php } 
+<?php 
+	} 
 ?>
-
 <script type="text/javascript">
 	function validasi() {
 		var username = document.getElementById("username").value;
@@ -55,6 +55,12 @@ include 'koneksi.php';
 			return false;
 		}
 	}
+</script>
+
+<script>
+	$(document).ready(function(){
+	    $("#body").fadeIn(3000);
+	});
 </script>
 </body> 
 </html>

@@ -34,9 +34,14 @@ if($_SESSION['status'] !="login"){
 <body>
 
 	<h3 class="judul">Data PC Staff Kahaptex</h3>
-	<?php echo "Hai, Selamat Datang ".$_SESSION['nama_user']; ?>
-	<hr />
-	
+<div class="col-12" style="text-align: center;">
+	<div class="fade1" style="display: none;">
+		<?php echo "Hai, Selamat Datang ".$_SESSION['nama_user']; ?>
+	</div>
+</div>
+
+<hr />
+
 <?php
 		if(isset($_GET['pesan'])){
 			$pesan = $_GET['pesan'];
@@ -95,7 +100,7 @@ if($_SESSION['status'] !="login"){
 	        <a href="#" type="button" class="btn btn-primary2" data-toggle="modal" data-target="#ModalInput"><i class="fa fa-plus"></i></a>
 	    </div>
     	<div class="col-sm-2">
-            <select name="s_jurusan" id="s_jurusan" class="form-control">
+            <select name="s_jurusan" id="s_jurusan" class="form-control all">
                 <option value="">All</option>
                 <option value="manager" <?php if ($s_jurusan=="manager"){ echo "selected"; } ?>>MANAGER</option>
                 <option value="hrd" <?php if ($s_jurusan=="hrd"){ echo "selected"; } ?>>HRD</option>
@@ -116,27 +121,26 @@ if($_SESSION['status'] !="login"){
             </select>	        
     	</div> 
 	    <div class="col-sm-3">
-	        <input type="text" placeholder="Keyword" name="s_keyword" id="s_keyword" class="form-control" value="<?php echo $s_keyword; ?>">
+	        <input type="text" placeholder="Keyword" name="s_keyword" id="s_keyword" class="form-control key" value="<?php echo $s_keyword; ?>">
 	    </div>
 	    <div class="col-sm-2">
-	        <button id="search" name="search" class="btn btn-warning"><i class="fa fa-search"></i></button>
+	        <button id="search" name="search" class="btn btn-warning srch"><i class="fa fa-search"></i></button>
 	    </div>
 	    <div class="col">
 	        <a href="logout.php" type="button" class="btn btn-logout">LOGOUT</a>
 	    </div>
 	</div>
 
-<div class="container">
-	<div class="row-total">
-		<div class="col-md">
+<div class="row total">
+	<div class="col-sm">
 <?php
 		$sql_jml = mysqli_query($konek, "SELECT printer1 FROM pcid");
 		$jml_pc = mysqli_num_rows($sql_jml);
 ?>
 	    	Total PC = <?php echo $jml_pc ?>
-  	 	</div>
+  	</div>
 
-  		<div class="col-md">
+  	<div class="col-sm">
 <?php
 		$result=mysqli_query($konek, "SELECT count(printer1) as total from pcid");
 		$data=mysqli_fetch_assoc($result);
@@ -145,15 +149,14 @@ if($_SESSION['status'] !="login"){
 		$data2=mysqli_fetch_assoc($result2);
 ?>
 		Total Printer = <?php echo $data['total']+$data2['total2']; ?>
-  		</div>
+  	</div>
 
-  		<div class="col-md">
+  	<div class="col-sm">
 <?php
 		$jml_sc=mysqli_query($konek, "SELECT count(scanner) as sc from pcid");
 		$data_sc=mysqli_fetch_assoc($jml_sc);
 ?>
 	    Total Scanner = <?php echo $data_sc['sc']; ?>
-  		</div>
   	</div>
  </div>
 
@@ -475,6 +478,9 @@ if($_SESSION['status'] !="login"){
 </div>
 </div>
 </div>
+	<?php
+	include 'footer.php';
+	?>
 <!--======================================End of Model Edit========================================-->
 
 <!--=======================================End of Table===========================================-->
@@ -514,8 +520,10 @@ if($_SESSION['status'] !="login"){
 			$.bootstrapGrowl("this is message is success");
 		}
 	</script> -->
-	<?php
-	include 'footer.php';
-	?>
+	<script>
+	$(document).ready(function(){
+	    $(".fade1").fadeIn(3000);
+	});
+	</script>
 </body>
 </html>
