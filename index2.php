@@ -1,5 +1,6 @@
 <?php
 include 'koneksi.php';
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -11,6 +12,7 @@ include 'koneksi.php';
 <!--===============================================================================================-->	
 	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
 <!--===============================================================================================-->
+	<!-- <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css"> -->
 	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.css">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="fonts/font-awesome/css/font-awesome.min.css">
@@ -28,8 +30,51 @@ include 'koneksi.php';
 <body>
 
 	<h3 class="judul">Data PC Staff Kahaptex</h3>
-	<hr />
-	
+<hr />
+
+<?php
+		if(isset($_GET['pesan'])){
+			$pesan = $_GET['pesan'];
+			if($pesan == "input"){
+				echo '<div class="alert alert-primary" role="alert">
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+						<strong> Sukses..!</strong> Data Berhasil Tersimpan.
+						</div>';
+				echo '<meta http-equiv="refresh" content="3;url=index.php">';
+			}else if($pesan == "gagal input"){
+				echo '<div class="alert alert-primary" role="alert">
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+						<strong> Maaf..!</strong> Data Gagal Tersimpan.
+						</div>';
+				echo '<meta http-equiv="refresh" content="3;url=index.php">';
+			}else if($pesan == "update"){
+				echo '<div class="alert alert-primary" role="alert">
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+						<strong> Sukses..!</strong> Data Berhasil Diubah.
+						</div>';
+				echo '<meta http-equiv="refresh" content="3;url=index.php">';
+			}else if($pesan == "gagal update"){
+				echo '<div class="alert alert-primary" role="alert">
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+						<strong> Maaf..!</strong> Data Gagal Diubah.
+						</div>';
+				echo '<meta http-equiv="refresh" content="3;url=index.php">';
+			}else if($pesan == "delete"){
+				echo '<div class="alert alert-primary" role="alert">
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+						<strong> Sukses..!</strong> Data Berhasil Terhapus.
+						</div>';
+				echo '<meta http-equiv="refresh" content="3;url=index.php">';
+			}else if($pesan == "gagal delete"){
+				echo '<div class="alert alert-primary" role="alert">
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+						<strong> Maaf..!</strong> Data Gagal Dihapus.
+						</div>';
+				echo '<meta http-equiv="refresh" content="3;url=index.php">';
+			}
+		}
+	?>
+
 <?php 
 	$s_jurusan="";
     $s_keyword="";
@@ -40,17 +85,17 @@ include 'koneksi.php';
 ?>
 
 <form method="POST" action="">
-    <div class="row mb-2">
-    	<!-- <div class="col-sm-2" >
-	        <a href="#" type="button" class="btn btn-primary2" data-toggle="modal" data-target="#ModalInput">Tambah Data</a>
-	    </div> -->
+    <div class="row mb-3">
+    	<div class="col-sm-1" >
+	        <a href="#" type="button" class="btn btn-primary2" data-toggle="modal" data-target="#ModalInput"><i class="fa fa-plus"></i></a>
+	    </div>
     	<div class="col-sm-2">
-            <select name="s_jurusan" id="s_jurusan" class="form-control">
+            <select name="s_jurusan" id="s_jurusan" class="form-control all">
                 <option value="">All</option>
                 <option value="manager" <?php if ($s_jurusan=="manager"){ echo "selected"; } ?>>MANAGER</option>
                 <option value="hrd" <?php if ($s_jurusan=="hrd"){ echo "selected"; } ?>>HRD</option>
                 <option value="design" <?php if ($s_jurusan=="design"){ echo "selected"; } ?>>DESIGN</option>
-                <option value="it" <?php if ($s_jurusan=="it"){ echo "selected"; } ?>>IT</option>
+                <option value="teknik" <?php if ($s_jurusan=="teknik"){ echo "selected"; } ?>>TEKNIK</option>
                 <option value="exim" <?php if ($s_jurusan=="exim"){ echo "selected"; } ?>>EXIM</option>
                 <option value="stok" <?php if ($s_jurusan=="stok"){ echo "selected"; } ?>>STOK LT.4</option>
                 <option value="law" <?php if ($s_jurusan=="law"){ echo "selected"; } ?>>LAW</option>
@@ -65,23 +110,27 @@ include 'koneksi.php';
                 <option value="marketing" <?php if ($s_jurusan=="marketing"){ echo "selected"; } ?>>MARKETING</option>
             </select>	        
     	</div> 
-	    <div class="col-sm-3" >
-	        <input type="text" placeholder="Keyword" name="s_keyword" id="s_keyword" class="form-control" value="<?php echo $s_keyword; ?>">
+	    <div class="col-sm-3">
+	        <input type="text" placeholder="Keyword" name="s_keyword" id="s_keyword" class="form-control key" value="<?php echo $s_keyword; ?>">
 	    </div>
-	    <div class="col-sm-1" >
-	        <button id="search" name="search" class="btn btn-warning"><i class="fa fa-search"></i></button>
+	    <div class="col-sm-2">
+	        <button id="search" name="search" class="btn btn-warning srch"><i class="fa fa-search"></i></button>
+	    </div>
+	    <div class="col">
+	        <a href="logout.php" type="button" class="btn btn-logout">LOGOUT</a>
 	    </div>
 	</div>
 
-	<div class="col-md">
+<div class="row total">
+	<div class="col-sm">
 <?php
 		$sql_jml = mysqli_query($konek, "SELECT printer1 FROM pcid");
 		$jml_pc = mysqli_num_rows($sql_jml);
 ?>
-	    	Total PC :&nbsp; <?php echo $jml_pc ?>
-  	</div> 
+	    	Total PC = <?php echo $jml_pc ?>
+  	</div>
 
-  	<div class="col-md">
+  	<div class="col-sm">
 <?php
 		$result=mysqli_query($konek, "SELECT count(printer1) as total from pcid");
 		$data=mysqli_fetch_assoc($result);
@@ -92,14 +141,15 @@ include 'koneksi.php';
 		Total Printer = <?php echo $data['total']+$data2['total2']; ?>
   	</div>
 
-  	<div class="col-md">
+  	<div class="col-sm">
 <?php
 		$jml_sc=mysqli_query($konek, "SELECT count(scanner) as sc from pcid");
 		$data_sc=mysqli_fetch_assoc($jml_sc);
 ?>
 	    Total Scanner = <?php echo $data_sc['sc']; ?>
   	</div>
-  	
+ </div>
+
 </form>
 <!-- ============================Modal Input================================-->
 <div class="modal fade" id="ModalInput" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -114,17 +164,22 @@ include 'koneksi.php';
       <div class="modal-body">
       	<form role="form" action="action.php?act=input" method="post">
 <?php
-	//$proses = $_GET['proses'];
 
-				$sql = "SELECT no_pc FROM `pcid` order by no_pc DESC";
-				$hasil = mysqli_query($konek, $sql);
-				$data = mysqli_fetch_array($hasil);
-				$no_pc = $data['no_pc'];
+	$query = mysqli_query($konek, "SELECT max(no_pc) as pcTerbesar FROM pcid");
+	$data = mysqli_fetch_array($query);
+	$no_pc = $data['pcTerbesar'];
+
+	$urutan = (int) substr($no_pc, 3);
+
+	$urutan++;
+
+	$huruf = "PC-";
+	$no_pc = $huruf . sprintf("%04s", $urutan);
 			
 ?>
 	<div class="form-group">
 	    <label>ID</label>
-	    <input type="text" class="form-control" name="no_pc" value="<?php echo $no_pc ?>">
+	    <input type="text" class="form-control" name="no_pc" value="<?php echo $no_pc ?>" readonly>
   	</div>
 
   	<div class="form-group">
@@ -134,7 +189,7 @@ include 'koneksi.php';
 	    		<option value="MANAGER">MANAGER</option>
 	    		<option value="HRD">HRD</option>
 	    		<option value="DESIGN">DESIGN</option>
-	    		<option value="IT">IT</option>
+	    		<option value="TEKNIK">TEKNIK</option>
 	    		<option value="EXIM">EXIM</option>
 	    		<option value="STOK LT.4">STOK LT.4</option>
 	    		<option value="LAW">LAW</option>
@@ -241,9 +296,9 @@ include 'koneksi.php';
     $search_jurusan = '%'. $s_jurusan .'%';
     $search_keyword = '%'. $s_keyword .'%';
     $no = 1;
-    $query = "SELECT * FROM pcid WHERE divisi LIKE ? AND (no_pc LIKE ? OR divisi LIKE ? OR nama_user LIKE ? OR ip0 LIKE ? OR ip1 LIKE ?) ORDER BY id ASC";
+    $query = "SELECT * FROM pcid WHERE divisi LIKE ? AND (no_pc LIKE ? OR divisi LIKE ? OR printer1 LIKE ? OR printer2 LIKE ? OR scanner LIKE ? OR nama_user LIKE ? OR ip0 LIKE ? OR ip1 LIKE ?) ORDER BY id ASC";
     $dewan1 = $konek->prepare($query);
-    $dewan1->bind_param('ssssss', $search_jurusan, $search_keyword, $search_keyword, $search_keyword, $search_keyword, $search_keyword);
+    $dewan1->bind_param('sssssssss', $search_jurusan, $search_keyword, $search_keyword, $search_keyword, $search_keyword, $search_keyword, $search_keyword, $search_keyword, $search_keyword);
     $dewan1->execute();
     $res1 = $dewan1->get_result();
 
@@ -312,13 +367,11 @@ include 'koneksi.php';
 				$lain_lain = $data2['lain_lain'];
 			
 ?>
-	<div class="form-group">
-	    <label>#</label>
-	    <input type="text" class="form-control" name="id" value="<?php echo $id ?>" readonly>
+	    <input type="hidden" class="form-control" name="id" value="<?php echo $id ?>" readonly>
 
-  	</div><div class="form-group">
+  	<div class="form-group">
 	    <label>ID</label>
-	    <input type="text" class="form-control" name="no_pc" value="<?php echo $no_pc ?>">
+	    <input type="text" class="form-control" name="no_pc" value="<?php echo $no_pc ?>" readonly>
   	</div>
 
   	<div class="form-group">
@@ -415,6 +468,9 @@ include 'koneksi.php';
 </div>
 </div>
 </div>
+	<?php
+	include 'footer.php';
+	?>
 <!--======================================End of Model Edit========================================-->
 
 <!--=======================================End of Table===========================================-->
@@ -454,5 +510,10 @@ include 'koneksi.php';
 			$.bootstrapGrowl("this is message is success");
 		}
 	</script> -->
+	<script>
+	$(document).ready(function(){
+	    $(".fade1").fadeIn(3000);
+	});
+	</script>
 </body>
 </html>
