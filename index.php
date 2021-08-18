@@ -36,7 +36,7 @@ if($_SESSION['status'] !="login"){
 	<h3 class="judul">Data PC Staff Kahaptex</h3>
 <div class="col-12" style="text-align: center;">
 	<div class="fade1" style="display: none;">
-		<?php echo "Hai, Selamat Datang ".$_SESSION['nama_user']; ?>
+		<?php echo "Hai, Selamat Datang Tes".$_SESSION['nama_user']; ?>
 	</div>
 </div>
 
