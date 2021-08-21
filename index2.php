@@ -30,6 +30,11 @@ session_start();
 <body>
 
 	<h3 class="judul">Data PC Staff Kahaptex</h3>
+	<div class="col-12" style="text-align: center;">
+	<div class="fade1" style="display: none;">
+		You Login with Guess
+	</div>
+</div>
 <hr />
 
 <?php
@@ -86,11 +91,11 @@ session_start();
 
 <form method="POST" action="">
     <div class="row mb-3">
-    	<div class="col-sm-1" >
+<!--     	<div class="col-sm-1" >
 	        <a href="#" type="button" class="btn btn-primary2" data-toggle="modal" data-target="#ModalInput"><i class="fa fa-plus"></i></a>
-	    </div>
+	    </div> -->
     	<div class="col-sm-2">
-            <select name="s_jurusan" id="s_jurusan" class="form-control all">
+            <select name="s_jurusan" id="s_jurusan" class="form-control all2">
                 <option value="">All</option>
                 <option value="manager" <?php if ($s_jurusan=="manager"){ echo "selected"; } ?>>MANAGER</option>
                 <option value="hrd" <?php if ($s_jurusan=="hrd"){ echo "selected"; } ?>>HRD</option>
@@ -111,10 +116,10 @@ session_start();
             </select>	        
     	</div> 
 	    <div class="col-sm-3">
-	        <input type="text" placeholder="Keyword" name="s_keyword" id="s_keyword" class="form-control key" value="<?php echo $s_keyword; ?>">
+	        <input type="text" placeholder="Keyword" name="s_keyword" id="s_keyword" class="form-control key2" value="<?php echo $s_keyword; ?>">
 	    </div>
 	    <div class="col-sm-2">
-	        <button id="search" name="search" class="btn btn-warning srch"><i class="fa fa-search"></i></button>
+	        <button id="search" name="search" class="btn btn-warning srch2"><i class="fa fa-search"></i></button>
 	    </div>
 	    <div class="col">
 	        <a href="logout.php" type="button" class="btn btn-logout">LOGOUT</a>
