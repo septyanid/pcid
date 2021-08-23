@@ -285,7 +285,7 @@ th, td {
 }
 
 .table100-body {
-  max-height: 390px;
+  max-height: 500px;
   overflow: auto;
 }
 
