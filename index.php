@@ -178,7 +178,7 @@ if($_SESSION['status'] !="login"){
 	$data = mysqli_fetch_array($query);
 	$no_pc = $data['pcTerbesar'];
 
-	$urutan = (int) substr($no_pc, 3);
+	$urutan = substr($no_pc, 3);
 
 	$urutan++;
 
