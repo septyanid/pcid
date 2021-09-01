@@ -112,6 +112,7 @@ session_start();
                 <option value="akunting" <?php if ($s_jurusan=="akunting"){ echo "selected"; } ?>>AKUNTING</option>
                 <option value="fakturing" <?php if ($s_jurusan=="fakturing"){ echo "selected"; } ?>>FAKTURING</option>
                 <option value="marketing" <?php if ($s_jurusan=="marketing"){ echo "selected"; } ?>>MARKETING</option>
+                <option value="operator" <?php if ($s_jurusan=="operator"){ echo "selected"; } ?>>OPERATOR</option>
             </select>	        
     	</div> 
 	    <div class="col-sm-3">
