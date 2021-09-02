@@ -2,7 +2,7 @@
 	$host = "localhost";
 	$user = "root";
 	$pass = "";
-	$database = "coba_pcid";
+	$database = "pcid";
 
 	$konek = mysqli_connect($host, $user, $pass);
 	

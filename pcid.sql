@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Aug 02, 2021 at 12:14 PM
+-- Generation Time: Sep 02, 2021 at 04:33 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.3.25
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `coba_pcid`
+-- Database: `pcid`
 --
 
 -- --------------------------------------------------------
@@ -52,8 +52,7 @@ INSERT INTO `pcid` (`id`, `no_pc`, `divisi`, `nama_user`, `set_pc`, `printer1`, 
 (3, 'PC-0003', 'HRD', 'Alda', 'OK', NULL, NULL, NULL, 138, 138, '0', ''),
 (4, 'PC-0004', 'HRD', 'Nabila', 'OK', NULL, NULL, NULL, 40, 40, '0', ''),
 (5, 'PC-0005', 'HRD', 'Sri', 'OK', NULL, NULL, NULL, 42, 42, '0', ''),
-(6, 'PC-00058', 'MARKETING', 'Ce Licen', 'OK', NULL, NULL, NULL, 44, 44, '0', ''),
-(7, 'PC-0006', 'Operator Lt.6', 'Operator', 'OK', NULL, NULL, NULL, 0, 216, '0', ''),
+(7, 'PC-0006', 'OPERATOR', 'Operator', 'OK', NULL, NULL, NULL, 0, 216, '0', 'Lt.6'),
 (8, 'PC-0007', 'DESIGN', 'Pak Engkus', 'OK', NULL, NULL, 'Plustek Opticslim', 0, 59, '0', 'Wifi Desnet'),
 (9, 'PC-00049', 'DESIGN', 'Pak Engkus', 'OK', NULL, NULL, NULL, 0, 0, '0', 'Untuk di mess'),
 (10, 'PC-0008', 'DESIGN', 'Anonymous', 'OK', NULL, NULL, NULL, 0, 57, '0', 'Wifi Desnet'),
@@ -62,9 +61,8 @@ INSERT INTO `pcid` (`id`, `no_pc`, `divisi`, `nama_user`, `set_pc`, `printer1`, 
 (13, 'PC-0011', 'EXIM & PRINTING', 'Mba Eni', 'OK', 'Epson L1110 (003)', NULL, NULL, 114, 114, '0', ''),
 (14, 'PC-0012', 'EXIM & PRINTING', 'Jimmy', 'OK', 'Epson Lx-310 (021)', 'Epson L1110', NULL, 130, 130, '0', ''),
 (15, 'PC-0013', 'EXIM & PRINTING', 'Hendi', 'OK', NULL, NULL, NULL, 131, 131, '0', ''),
-(16, 'PC-0014', 'EXIM & PRINTING', 'Anonymous', 'OK', NULL, NULL, NULL, 119, 119, '0', ''),
+(16, 'PC-0014', 'EXIM & PRINTING', 'Herlina', 'OK', NULL, NULL, NULL, 119, 119, '0', ''),
 (17, 'PC-0015', 'EXIM & PRINTING', 'Mba Ika', 'OK', NULL, NULL, 'CD-D240 (003)', 118, 118, '0', ''),
-(18, 'PC-0016', 'EXIM & PRINTING', 'Herlina', 'OK', NULL, NULL, NULL, 132, 132, '0', ''),
 (19, 'PC-0017', 'STOK LT.4', 'Ce Mimi', 'OK', 'Epson L1110 (004)', NULL, NULL, 43, 43, '0', ''),
 (20, 'PC-0018', 'STOK LT.4', 'Mba Tri', 'OK', NULL, NULL, NULL, 219, 219, '0', ''),
 (21, 'PC-0019', 'STOK LT.4', 'Veli', 'OK', NULL, NULL, NULL, 153, 153, '0', ''),
@@ -73,7 +71,7 @@ INSERT INTO `pcid` (`id`, `no_pc`, `divisi`, `nama_user`, `set_pc`, `printer1`, 
 (24, 'PC-0022', 'STOK LT.4', 'Mba Rani', 'OK', 'HP LaserJet (005)', NULL, NULL, 62, 62, '0', ''),
 (25, 'PC-0023', 'STOK LT.4', 'Anonymous', 'OK', NULL, NULL, NULL, 174, 174, '0', ''),
 (26, 'PC-0024', 'STOK LT.4', 'Alvin', 'OK', NULL, NULL, NULL, 129, 129, '0', ''),
-(27, 'PC-0025', 'LAW', 'Koh Athat', 'OK', 'Epson L1110 (006)', NULL, NULL, 0, 0, '0', 'USB Wifi'),
+(27, 'PC-0025', 'LAW', 'Koh Athat', 'OK', 'Canon G1010', NULL, NULL, 0, 0, '0', 'USB Wifi'),
 (28, 'PC-0026', 'LAW', 'Anonymous', 'OK', NULL, NULL, NULL, 0, 0, '0', ''),
 (29, 'PC-0027', 'SJ', 'Tia/Dewi', 'OK', 'Epson Lx-310 (007)', NULL, NULL, 26, 26, '0', ''),
 (30, 'PC-0028', 'SJ', 'Shella', 'OK', NULL, NULL, NULL, 22, 22, '0', ''),
@@ -105,7 +103,7 @@ INSERT INTO `pcid` (`id`, `no_pc`, `divisi`, `nama_user`, `set_pc`, `printer1`, 
 (58, 'PC-0055', 'AUDIT', 'Azizah', 'OK', NULL, NULL, NULL, 94, 94, '0', ''),
 (59, 'PC-0056', 'AUDIT', 'Mba Ana', 'OK', 'Epson L1110 (020)', NULL, NULL, 97, 97, '0', ''),
 (60, 'PC-0057', 'AUDIT', 'Rini', 'OK', NULL, NULL, NULL, 91, 91, '0', ''),
-(62, 'PC-0061', 'MANAGER', 'Pak Yosua', 'OK', 'Epson L310 (022)', NULL, NULL, 56, 56, '0', ''),
+(62, 'PC-0061', 'PURCHASING', 'Pak Yosua', 'OK', 'Epson L310 (022)', NULL, NULL, 56, 56, '0', ''),
 (63, 'PC-0062', 'MANAGER', 'Prof. Andri', 'OK', NULL, NULL, NULL, 57, 57, '0', 'Spiker Robot'),
 (64, 'PC-0063', 'TEKNIK', 'Kevin S.', 'OK', NULL, NULL, NULL, 69, 0, '69', ''),
 (65, 'PC-0064', 'TEKNIK', 'Nursalim', 'OK', 'Epson L805(023)', NULL, NULL, 181, 0, '0', ''),
@@ -119,8 +117,8 @@ INSERT INTO `pcid` (`id`, `no_pc`, `divisi`, `nama_user`, `set_pc`, `printer1`, 
 (73, 'PC-0072', 'A/R', 'Fanny', 'OK', 'Epson Lx-310 (025)', NULL, NULL, 70, 70, '70', ''),
 (74, 'PC-0073', 'A/R', 'Ria', 'OK', NULL, NULL, NULL, 66, 66, '0', ''),
 (75, 'PC-0074', 'A/R', 'Yeni', 'OK', 'Brother HL-1200', NULL, NULL, 64, 64, '0', ''),
-(76, 'PC-0075', 'A/R', 'Colline', 'OK', NULL, NULL, NULL, 65, 65, '0', ''),
-(77, 'PC-0076', 'A/R', 'Indah', 'OK', NULL, NULL, NULL, 71, 71, '0', ''),
+(76, 'PC-0075', 'A/R', 'Nada', 'OK', NULL, NULL, NULL, 65, 65, '0', ''),
+(77, 'PC-0076', 'A/R', 'Colline', 'OK', NULL, NULL, NULL, 71, 71, '0', ''),
 (78, 'PC-0077', 'PURCHASING', 'Mba Tintin', 'OK', NULL, NULL, NULL, 134, 134, '0', ''),
 (82, 'PC-0078', 'FAKTURING', 'Zulfa', 'OK', 'Epson Lx-310', NULL, NULL, 141, 141, '0', ''),
 (83, 'PC-0079', 'FAKTURING', 'Nure', 'OK', 'Epson Lx-310', 'HP Laserjet p1102', NULL, 80, 80, '0', ''),
@@ -131,7 +129,26 @@ INSERT INTO `pcid` (`id`, `no_pc`, `divisi`, `nama_user`, `set_pc`, `printer1`, 
 (107, 'PC-0084', 'AKUNTING', 'Heti', 'OK', NULL, NULL, 'Canon DR-C240', 127, 127, '42.127', ''),
 (108, 'PC-0085', 'AKUNTING', 'Desi', 'OK', NULL, NULL, NULL, 98, 98, '0', ''),
 (109, 'PC-0086', 'AKUNTING', 'Salwa', 'OK', 'Epson L1110', NULL, NULL, 239, 239, '0', ''),
-(110, 'PC-0087', 'AKUNTING', 'Mba Kiki', 'OK', 'HP LaserJet P1102', NULL, NULL, 109, 109, '0', '');
+(110, 'PC-0087', 'AKUNTING', 'Mba Kiki', 'OK', 'HP LaserJet P1102', NULL, NULL, 109, 109, '0', ''),
+(111, 'PC-0088', 'AKUNTING', 'Lia', 'OK', NULL, NULL, NULL, 126, 126, '0', ''),
+(112, 'PC-0089', 'AUDIT', 'Mba Ana', '-', NULL, NULL, NULL, 195, 0, '11.195', 'Laptop'),
+(113, 'PC-0090', 'MARKETING', 'Ce Achui', 'OK', NULL, NULL, NULL, 121, 121, '0', ''),
+(114, 'PC-0091', 'MARKETING', 'Pak Yusup S.', 'OK', NULL, NULL, NULL, 99, 99, '0', ''),
+(115, 'PC-0092', 'MARKETING', 'Ce Nani', 'OK', NULL, NULL, NULL, 148, 148, '0', ''),
+(116, 'PC-0093', 'MARKETING', 'Amah', 'OK', 'Epson L1110', NULL, NULL, 228, 228, '0', ''),
+(117, 'PC-0094', 'MARKETING', 'Ce Yasinta', 'OK', 'Epson L310', NULL, NULL, 87, 87, '0', ''),
+(118, 'PC-0095', 'MARKETING', 'Ce Catherine', 'OK', NULL, NULL, NULL, 142, 142, '0', ''),
+(119, 'PC-0096', 'MARKETING', 'Ce Alang', '-', NULL, NULL, NULL, 0, 0, '0', ''),
+(120, 'PC-0097', 'MARKETING', 'Mba Win', 'OK', NULL, NULL, NULL, 139, 139, '0', ''),
+(121, 'PC-0098', 'MARKETING', 'Anonymous', 'OK', NULL, NULL, NULL, 86, 86, '11.86', 'SPN'),
+(122, 'PC-0099', 'MARKETING', 'Jevica', 'Ok', NULL, NULL, NULL, 146, 146, '0', ''),
+(123, 'PC-0100', 'MARKETING', 'Mba Ika', 'OK', NULL, NULL, NULL, 152, 152, '0', ''),
+(124, 'PC-0101', 'MARKETING', 'Mba Sofi', 'OK', NULL, NULL, NULL, 82, 82, '0', ''),
+(125, 'PC-0102', 'MARKETING', 'Ce Theresia', 'OK', NULL, NULL, NULL, 149, 149, '0', ''),
+(126, 'PC-0103', 'MARKETING', 'Ce Lili', 'OK', NULL, NULL, NULL, 44, 44, '0', ''),
+(127, 'PC-0104', 'MARKETING', 'Mba Yani', 'OK', NULL, NULL, NULL, 161, 161, '0', ''),
+(128, 'PC-0105', 'MARKETING', 'Ce Mina', 'Ok', NULL, NULL, NULL, 67, 67, '0', ''),
+(129, 'PC-0106', 'OPERATOR', 'Monik', 'OK', 'Epson Lx-310', 'Epson Lx-310', NULL, 176, 176, '0', '');
 
 -- --------------------------------------------------------
 
@@ -151,7 +168,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `nama_user`, `username`, `password`) VALUES
-(1, 'Kevin Septyan', 'kevin', 'kevin123');
+(1, 'Kevin Septyan', 'kevin', 'kevin123'),
+(2, 'Admin', 'admin', 'admin123');
 
 --
 -- Indexes for dumped tables
@@ -177,13 +195,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `pcid`
 --
 ALTER TABLE `pcid`
-  MODIFY `id` bigint(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=111;
+  MODIFY `id` bigint(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=130;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
