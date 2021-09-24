@@ -99,7 +99,7 @@ if($_SESSION['status'] !="login"){
 	        <a href="#" type="button" class="btn btn-primary2" data-toggle="modal" data-target="#ModalInput"><i class="fa fa-plus"></i></a>
 	    </div>
     	<div class="col-sm-2">
-            <select name="s_jurusan" id="s_jurusan" class="form-control all">
+            <select name="s_jurusan" id="s_jurusan" class="form-control">
                 <option value="">All</option>
                 <option value="manager" <?php if ($s_jurusan=="manager"){ echo "selected"; } ?>>MANAGER</option>
                 <option value="hrd" <?php if ($s_jurusan=="hrd"){ echo "selected"; } ?>>HRD</option>
@@ -121,17 +121,21 @@ if($_SESSION['status'] !="login"){
             </select>	        
     	</div> 
 	    <div class="col-sm-3">
-	        <input type="text" placeholder="Keyword" name="s_keyword" id="s_keyword" class="form-control key" value="<?php echo $s_keyword; ?>">
+	        <input type="text" placeholder="Keyword" name="s_keyword" id="s_keyword" class="form-control" value="<?php echo $s_keyword; ?>">
 	    </div>
 	    <div class="col-sm-2">
-	        <button id="search" name="search" class="btn btn-warning srch"><i class="fa fa-search"></i></button>
+	        <button id="search" name="search" class="btn btn-warning"><i class="fa fa-search"></i></button>
 	    </div>
+	    <div class="col-sm-2">
+	        <a href="index3" target="_blank" id="trash" name="search" class="btn btn-warning trsh"><i class="fa fa-trash"></i></a>
+	    </div>
+	    
 	    <div class="col">
 	        <a href="logout.php" type="button" class="btn btn-logout">LOGOUT</a>
 	    </div>
 	</div>
 
-<div class="row total">
+<div class="row" id="total">
 	<div class="col-sm">
 <?php
 		$sql_jml = mysqli_query($konek, "SELECT printer1 FROM pcid");
@@ -287,7 +291,7 @@ if($_SESSION['status'] !="login"){
 								<th class="cell100 column2">ID</th>
 								<th class="cell100 column3">Divisi</th>
 								<th class="cell100 column4">User</th>
-								<th class="cell100 column5">Set PC</th>
+								<!-- <th class="cell100 column5">Set PC</th> -->
 								<th class="cell100 column6">Printer 1</th>
 								<th class="cell100 column7">Printer 2</th>
 								<th class="cell100 column8">Scanner</th>
@@ -333,7 +337,7 @@ if($_SESSION['status'] !="login"){
 				<td class="cell100 column2"><?php echo $no_pc; ?></td>
 				<td class="cell100 column3"><?php echo $divisi; ?></td>
 				<td class="cell100 column4"><?php echo $nama_user; ?></td>
-				<td class="cell100 column5"><?php echo $set_pc; ?></td>
+				<!-- <td class="cell100 column5"><?php echo $set_pc; ?></td> -->
 				<td class="cell100 column6"><?php echo $printer1; ?></td>
 				<td class="cell100 column7"><?php echo $printer2; ?></td>
 				<td class="cell100 column8"><?php echo $scanner; ?></td>
@@ -414,10 +418,10 @@ if($_SESSION['status'] !="login"){
 	    <input type="text" class="form-control" name="nama_user" value="<?php echo $nama_user ?>">
   	</div>
 
-  	<div class="form-group">
+  	<!-- <div class="form-group">
 	    <label>Set PC</label>
 	    <input type="text" class="form-control" name="set_pc" value="<?php echo $set_pc ?>">
-  	</div>
+  	</div> -->
 
   	<div class="form-group">
 	    <label>Printer 1</label>

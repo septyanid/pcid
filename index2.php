@@ -94,7 +94,7 @@ session_start();
 	        <a href="#" type="button" class="btn btn-primary2" data-toggle="modal" data-target="#ModalInput"><i class="fa fa-plus"></i></a>
 	    </div> -->
     	<div class="col-sm-2">
-            <select name="s_jurusan" id="s_jurusan" class="form-control all2">
+            <select name="s_jurusan" id="s_jurusan2" class="form-control">
                 <option value="">All</option>
                 <option value="manager" <?php if ($s_jurusan=="manager"){ echo "selected"; } ?>>MANAGER</option>
                 <option value="hrd" <?php if ($s_jurusan=="hrd"){ echo "selected"; } ?>>HRD</option>
@@ -116,17 +116,21 @@ session_start();
             </select>	        
     	</div> 
 	    <div class="col-sm-3">
-	        <input type="text" placeholder="Keyword" name="s_keyword" id="s_keyword" class="form-control key2" value="<?php echo $s_keyword; ?>">
+	        <input type="text" placeholder="Keyword" name="s_keyword" id="s_keyword2" class="form-control" value="<?php echo $s_keyword; ?>">
 	    </div>
 	    <div class="col-sm-2">
-	        <button id="search" name="search" class="btn btn-warning srch2"><i class="fa fa-search"></i></button>
+	        <button id="search2" name="search" class="btn btn-warning"><i class="fa fa-search"></i></button>
 	    </div>
+	    <div class="col-sm-2">
+	        <a href="index3" target="_blank" id="trash2" name="search" class="btn btn-warning trsh"><i class="fa fa-trash"></i></a>
+	    </div>
+
 	    <div class="col">
 	        <a href="logout.php" type="button" class="btn btn-logout">LOGOUT</a>
 	    </div>
 	</div>
 
-<div class="row total">
+<div class="row" id="total">
 	<div class="col-sm">
 <?php
 		$sql_jml = mysqli_query($konek, "SELECT printer1 FROM pcid");
@@ -174,7 +178,7 @@ session_start();
 	$data = mysqli_fetch_array($query);
 	$no_pc = $data['pcTerbesar'];
 
-	$urutan = (int) substr($no_pc, 3);
+	$urutan = substr($no_pc, 3);
 
 	$urutan++;
 
@@ -281,7 +285,7 @@ session_start();
 								<th class="cell100 column2">ID</th>
 								<th class="cell100 column3">Divisi</th>
 								<th class="cell100 column4">User</th>
-								<th class="cell100 column5">Set PC</th>
+								<!-- <th class="cell100 column5">Set PC</th> -->
 								<th class="cell100 column6">Printer 1</th>
 								<th class="cell100 column7">Printer 2</th>
 								<th class="cell100 column8">Scanner</th>
@@ -327,7 +331,7 @@ session_start();
 				<td class="cell100 column2"><?php echo $no_pc; ?></td>
 				<td class="cell100 column3"><?php echo $divisi; ?></td>
 				<td class="cell100 column4"><?php echo $nama_user; ?></td>
-				<td class="cell100 column5"><?php echo $set_pc; ?></td>
+				<!-- <td class="cell100 column5"><?php echo $set_pc; ?></td> -->
 				<td class="cell100 column6"><?php echo $printer1; ?></td>
 				<td class="cell100 column7"><?php echo $printer2; ?></td>
 				<td class="cell100 column8"><?php echo $scanner; ?></td>

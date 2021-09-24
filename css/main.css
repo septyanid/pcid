@@ -588,7 +588,7 @@ th, td {
   background-color: #cccccc;
 }
 
-.total{
+#total{
   text-align: center;
   background-color: #393939;
   border-radius: 5px;
@@ -600,17 +600,22 @@ th, td {
   padding: 3px;
 }
 
-.all{
+#s_jurusan{
   position: relative;
   right: 70px;
 }
 
-.key{
+#s_keyword{
   position: relative;
   right: 85px;
 }
 
-.srch{
+#search{
   position: relative;
   right: 100px;
+}
+
+#trash{
+  position: relative;
+  right: 280px;
 }
